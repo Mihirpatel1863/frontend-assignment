@@ -6,7 +6,7 @@
       "use": "@vercel/node"
     },
     {
-      "src": "client/index.html",
+      "src": "index.html",
       "use": "@vercel/static-build"
     }
   ],
@@ -17,25 +17,18 @@
     },
     {
       "src": "/(.*)",
-      "dest": "/client/index.html"
+      "dest": "/dist/index.html"
     }
   ],
   "functions": {
     "server/index.ts": {
-      "includeFiles": "server/**"
+      "includeFiles": [
+        "server/**",
+        "shared/**"
+      ]
     }
   },
-  "rewrites": [
-    {
-      "source": "/api/:match*",
-      "destination": "/api/:match*"
-    },
-    {
-      "source": "/:match*",
-      "destination": "/client/index.html"
-    }
-  ],
-  "buildCommand": "cd client && npm install && npm run build",
-  "outputDirectory": "client/dist",
+  "buildCommand": "npm install && npm run build",
+  "outputDirectory": "dist",
   "installCommand": "npm install"
 }
