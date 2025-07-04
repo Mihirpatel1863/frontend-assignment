@@ -6,15 +6,6 @@
       "use": "@vercel/node"
     }
   ],
-  "functions": {
-    "server/index.ts": {
-      "includeFiles": [
-        "dist/**",
-        "shared/**",
-        "server/**"
-      ]
-    }
-  },
   "routes": [
     {
       "src": "/api/(.*)",
