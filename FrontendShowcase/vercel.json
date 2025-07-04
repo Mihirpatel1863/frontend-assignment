@@ -9,7 +9,7 @@
   "functions": {
     "server/index.ts": {
       "includeFiles": [
-        "dist/public/**",
+        "dist/**",
         "shared/**",
         "server/**"
       ]
